@@ -4,7 +4,7 @@ Welcome to my portfolio website! This project showcases my skills, experience, a
 
 ## 🚀 Live Demo
 
-You can view the live version of my portfolio here: [Portfolio Website](https://darshan0244.github.io/MyPortfolio030/)
+You can view the live version of my portfolio here: [Portfolio Website](https://darshan0244.github.io/My_Portfolio030/)
 
 ## 🛠 Tech Stack
 
