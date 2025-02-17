@@ -1,6 +1,6 @@
-# MyPortfolio030
+# MyPortfolio030 ⚙️
 
-Welcome to my portfolio website! This project showcases my skills, experience, and work as a web developer. The website is built using **HTML**, **CSS**, and **JavaScript**, focusing on responsive design, clean code, and an engaging user experience.
+🙏 Welcome to my portfolio website! This project showcases my skills, experience, and work as a web developer. The website is built using **HTML**, **CSS**, and **JavaScript**, focusing on responsive design, clean code, and an engaging user experience.
 
 ## 🚀 Live Demo
 
