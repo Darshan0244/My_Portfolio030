@@ -6,6 +6,8 @@ Welcome to my portfolio website! This project showcases my skills, experience, a
 
 You can view the live version of my portfolio here: [Portfolio Website](https://darshan0244.github.io/My_Portfolio030/)
 
+![My Image](https://github.com/Darshan0244/My_Portfolio030/blob/e517c66c4cf2f3f15c2b6fd7a1f7110d644402eb/Screenshot%202025-02-17%20140307.png)
+
 ## 🛠 Tech Stack
 
 - **HTML5**: For structuring the content of the website.
