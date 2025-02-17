@@ -7,6 +7,7 @@
 body{
     background: #080808;
     color: #fff;
+    cursor: none;
 }
 html{
     scroll-behavior: smooth;
@@ -76,7 +77,7 @@ nav ul li a:hover::after{
 }
 /* -----------------About----------------- */
 #about{
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
     color: #ababab;
 }
 .row{
@@ -435,3 +436,289 @@ h1{
     color: #b7b6b6;
  }
 /* --------------------------=============----------------------------------------------------------- */
+
+/* ------------------------ Custom Cursor ----------------------------- */
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #ff004f;  /* Change dot color */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    pointer-events: none;
+    /* Add glowing effect in #ff004f */
+    box-shadow: 0 0 10px rgba(255, 0, 79, 0.8), 0 0 20px rgba(255, 0, 79, 0.6);
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsla(342, 100%, 50%, 0.5); /* Keep border light */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    pointer-events: none;
+    /* Add glowing effect in #ff004f */
+    box-shadow: 0 0 10px rgba(255, 0, 79, 0.5), 0 0 30px rgba(255, 0, 79, 0.4);
+}
+@media only screen and (max-width: 600px) {
+    .cursor-dot, .cursor-outline {
+      display: none; /* Remove the custom cursor */
+    }
+  
+    body {
+      cursor: auto; /* Use the default cursor */
+    }
+  }
+
+/* -------------------------------- Nav Bar ------------------------------------- */
+@media only screen and (min-width: 601px) {
+    /* Full-screen background */
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/darshbackdesk.png);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* You can change to 'scroll' if you don't want it fixed */
+    }
+    
+    /* Header container */
+    .container {
+        padding: 10px 10%;
+        z-index: 1; /* Ensure content is above background */
+    }
+    
+    /* Navbar styling */
+    nav {
+        position: fixed; /* Fix the navbar to the top */
+        top: 0;
+        left: 0;
+        width: 100%; /* Make the navbar full-width */
+        background: rgba(31, 23, 23, 0.7); /* Slightly transparent black background */
+        backdrop-filter: blur(10px); 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7px 10%;
+        z-index: 1000; /* Higher z-index to keep it above everything else */
+        flex-wrap: wrap;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    }
+    
+    /* Logo styling */
+    .logo {
+        width: 150px;
+        -webkit-user-drag: none; /* Prevent dragging the logo */
+    }
+    
+    /* Menu list styling */
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+    }
+    
+    /* Link styling */
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+    }
+    
+    /* Underline animation for links */
+    nav ul li a::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+    }
+    
+    nav ul li a:hover::after {
+        width: 100%; /* Full-width underline on hover */
+    }
+    
+    /* Header text */
+    .header-text {
+        margin-top: 20%;
+        font-size: 30px;
+        user-select: none;
+    }
+    
+    /* Large heading in header */
+    .header-text h1 {
+        margin-top: 20px;
+        font-size: 60px;
+    }
+    
+    /* Colored span in heading */
+    .header-text h1 span {
+        color: #ff004f;
+    }
+}
+
+
+/* -------------------------- Skill Batch ------------------------------- */
+
+  .skills {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+
+  .skill-badge {
+    background: linear-gradient(135deg, #323131, #363535);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-badge img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-badge p {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .skill-badge:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #ff004c, #ff004c);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-badge:hover img {
+    transform: scale(1.2);
+  }
+
+  .skill-badge::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, #ff0040, #ff0048);
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .skill-badge:hover::before {
+    opacity: 1;
+  }
+
+
+/* --------------------- Link Works ------------------------ */
+
+.links {
+    display: inline-flex;
+    gap: 30px; /* Adjust this value for more or less space */
+}
+
+.links a {
+    text-decoration: none;
+}
+
+
+/* ------------------------------ PAGE LOADER----------------------------------- */
+
+.stylish-btn {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    /* height: 100vh;           Optional: If you want the button to be vertically centered in the entire viewport */
+}
+
+
+.glow-on-hover {
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 200px;
+    height: 50px;
+    border: 1.7px solid #ff0048; /* Adds a 2px red border */
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
